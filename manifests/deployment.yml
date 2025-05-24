@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sddwebapppipeline 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sddwebapppipeline
+  template:
+    metadata:
+      labels:
+        app: sddwebapppipeline 
+    spec:
+      containers:
+        - name: sddwebapppipeline 
+          image: crproduaen001.azurecr.io/sddwebapppipeline
+          ports:
+          - containerPort: 8080
